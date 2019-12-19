@@ -1,0 +1,20 @@
+<h2>My Pokemons</h2>
+
+<div>
+  <label>Pokemon name:
+    <input #pokemonName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(pokemonName.value); pokemonName.value=''">
+    add
+  </button>
+</div>
+
+<ul class="pokemons">
+  <li *ngFor="let pokemon of pokemons">
+    <a routerLink="/detail/{{pokemon.id}}">
+      <span class="badge">1</span> {{pokemon.name}}
+    </a>
+  </li>
+</ul>
+
